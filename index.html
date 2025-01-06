@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Cambiamento Climatico</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Il Cambiamento Climatico</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" class="active" onclick="changePage(1)">Introduzione</a></li>
+            <li><a href="#" onclick="changePage(2)">Impatto</a></li>
+            <li><a href="#" onclick="changePage(3)">Cause</a></li>
+            <li><a href="#" onclick="changePage(4)">Soluzioni</a></li>
+            <li><a href="#" onclick="changePage(5)">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Pagina 1 -->
+        <section id="page1" class="page active">
+            <h2>Che cos'è l'effetto serra naturale?</h2>
+            <div class="text-container">
+                <p>
+                    La vita sulla Terra dipende da tre fattori: la giusta distanza dal Sole, l’atmosfera e il ciclo dell’acqua. L’effetto serra naturale, causato da gas come l’anidride carbonica (CO2), il metano (CH4) e il vapore acqueo (H2O), è fondamentale per mantenere il nostro clima stabile. Questi gas trattengono parte del calore solare che altrimenti verrebbe disperso nello spazio, riscaldando la superficie terrestre.
+                </p>
+                <p>
+                    Senza l’effetto serra, la temperatura media sulla Terra sarebbe di circa -18°C, rendendo la vita impossibile. Grazie a questo processo naturale, la Terra mantiene una temperatura media di circa +15°C, che permette la presenza di acqua in forma liquida e la sopravvivenza di numerosi ecosistemi.
+                </p>
+                <p>
+                    Tuttavia, l'intensificazione dell'effetto serra causata dalle attività umane, come l'uso eccessivo di combustibili fossili e la deforestazione, sta aumentando le temperature globali, con conseguenze gravi per il nostro ambiente e il clima.
+                </p>
+            <img src="https://quifinanza.it/wp-content/uploads/sites/5/2021/05/cambiamenti-climatici.jpg" alt="Cambiamento Climatico">
+        </section>
+
+        <!-- Pagina 2 -->
+        <section class="page" id="page2">
+            <h2>Quanto è grave questo problema?</h2>
+            <p>
+            Rispetto ai livelli preindustriali, la temperatura media globale è aumentata di 0,98°C, con previsioni di un ulteriore aumento fino a 1,5°C entro il 2030-2050 senza interventi. Gli effetti del riscaldamento globale sono già evidenti, come la diminuzione del ghiaccio marino artico e l'aumento del livello del mare. Il decennio 2009-2019 è stato il più caldo, e il 2020 il secondo più caldo. Gli eventi meteorologici estremi sono aumentati, con stagioni di incendi più lunghe e intense, e fenomeni come El Niño più irregolari.
+            </p>
+            <p>
+            La crisi climatica sta causando danni irreparabili alla biodiversità, con spostamenti imprevedibili di specie. Il termine "climate change" è corretto, ma non cattura la gravità della situazione, che va definita come crisi climatica. Il 97% degli scienziati attribuisce il riscaldamento globale alle attività umane.
+            </p>
+        </section>
+
+        <!-- Pagina 3: Cause -->
+        <section class="page" id="page3">
+            <h2>Quali sono le cause principali?</h2>
+            <ul>
+                <li>Emissioni di gas serra da attività industriali e trasporti</li>
+                <li>Deforestazione</li>
+                <li>Uso intensivo di risorse naturali</li>
+                <li>L'inquinamento plastico e i rifiuti</li>
+            </ul>
+
+            <h3>Perché siamo preoccupati?</h3>
+            <p>
+            I cambiamenti climatici sono un fenomeno naturale, ma il riscaldamento globale attuale è anomalo, causato principalmente dalle attività umane. Con la rivoluzione industriale, le emissioni di CO2 e altri gas serra sono raddoppiate, portando la concentrazione di CO2 a livelli mai visti negli ultimi 700.000 anni.
+            </p>
+
+            <p>
+            Questo surriscaldamento del pianeta è stato confermato da numerosi studi scientifici, tra cui quelli dell'IPCC e osservazioni come quelle del Mauna Loa. Il legame tra CO2 e temperatura fu già stabilito nel XIX secolo e confermato negli anni '60 dagli scienziati David Keeling e Svante Arrhenius.
+            </p>
+        </section>
+
+        <!-- Pagina 4 -->
+        <section class="page" id="page4">
+            <h2>Come possiamo ostacolare il cambiamento climatico?</h2>
+            <p>
+            Le attività umane, come la combustione di combustibili fossili e l'abbattimento delle foreste pluviali, stanno aumentando i gas serra nell'atmosfera, intensificando l'effetto serra e il riscaldamento globale. Il carbone, il petrolio e il gas sono le principali fonti di emissioni di CO2, con il carbone responsabile del 36% delle emissioni globali nel 2019. La combustione di carbone è anche la principale causa dell'aumento di 1°C delle temperature medie globali. L'abbattimento delle foreste, che riduce la capacità degli alberi di assorbire CO2, e l'allevamento intensivo, contribuiscono ulteriormente al riscaldamento climatico.
+            </p>
+        </section>
+
+        <!-- Pagina 5: Modulo di Contatto e Tabella -->
+        <section class="page" id="page5">
+            <h2>Contattaci</h2>
+            <form id="contactForm" method="post">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Messaggio:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+                <input type="submit" value="Invia">
+            </form>
+
+            <!-- Tabella per visualizzare il parere -->
+            <h3>Parere dell'utente</h3>
+            <table id="commentsTable" border="1">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Messaggio</th>
+                        <th>Commento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- I dati saranno inseriti qui -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p> Il Cambiamento Climatico </p>
+    </footer>
+
+    <script>
+        // Funzione per cambiare le pagine
+        function changePage(pageNumber) {
+            let pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            let selectedPage = document.getElementById('page' + pageNumber);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+
+            let links = document.querySelectorAll('nav ul li a');
+            links.forEach(link => link.classList.remove('active'));
+            links[pageNumber - 1].classList.add('active');
+        }
+
+        // Inizializzazione della pagina
+        document.addEventListener('DOMContentLoaded', function() {
+            changePage(1);
+            loadComments(); // Carica i commenti salvati
+        });
+
+        // Carica i commenti dal localStorage
+        function loadComments() {
+            const comments = JSON.parse(localStorage.getItem('comments')) || [];
+            const table = document.getElementById('commentsTable').getElementsByTagName('tbody')[0];
+            comments.forEach(comment => {
+                var newRow = table.insertRow();
+                newRow.insertCell(0).textContent = comment.name;
+                newRow.insertCell(1).textContent = comment.email;
+                newRow.insertCell(2).textContent = comment.message;
+                newRow.insertCell(3).textContent = "Grezie del tuo contributo";
+            });
+        }
+
+        // Gestione del modulo di contatto
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenire l'invio del modulo
+
+            // Recupero i valori dal modulo
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            // Aggiungo un commento personalizzato
+            var comment = {
+                name: name,
+                email: email,
+                message: message
+            };
+
+            // Salvo i commenti nel localStorage
+            const comments = JSON.parse(localStorage.getItem('comments')) || [];
+            comments.push(comment);
+            localStorage.setItem('comments', JSON.stringify(comments));
+
+            // Inserisco i dati nella tabella
+            var table = document.getElementById('commentsTable').getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow();
+            newRow.insertCell(0).textContent = name;
+            newRow.insertCell(1).textContent = email;
+            newRow.insertCell(2).textContent = message;
+            newRow.insertCell(3).textContent = "Grezie del tuo contributo";
+
+            // Mostro un messaggio di conferma
+            alert('Grazie, ' + name + '! Il tuo messaggio è stato inviato con successo.');
+
+            // Resetta il modulo
+            document.getElementById('contactForm').reset(); // Questo cancellerà i dati nel modulo
+        });
+    </script>
+
+</body>
+</html>
