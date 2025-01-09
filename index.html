@@ -1,4 +1,4 @@
-.<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
     </nav>
 
     <main>
-        <!-- Pagina 1  Introduzione -->
+        <!-- Pagina 1 -->
         <section id="page1" class="page active">
             <h2>Che cos'è l'effetto serra naturale?</h2>
             <div class="text-container">
@@ -38,7 +38,7 @@
             <img src="https://quifinanza.it/wp-content/uploads/sites/5/2021/05/cambiamenti-climatici.jpg" alt="Cambiamento Climatico">
         </section>
 
-        <!-- Pagina 2 Impatto -->
+        <!-- Pagina 2 -->
         <section class="page" id="page2">
             <h2>Quanto è grave questo problema?</h2>
             <p>
@@ -69,12 +69,123 @@
             </p>
         </section>
 
-        <!-- Pagina 4 Soluzioni -->
+        <!-- Pagina 4 -->
         <section class="page" id="page4">
             <h2>Come possiamo ostacolare il cambiamento climatico?</h2>
             <p>
             Le attività umane, come la combustione di combustibili fossili e l'abbattimento delle foreste pluviali, stanno aumentando i gas serra nell'atmosfera, intensificando l'effetto serra e il riscaldamento globale. Il carbone, il petrolio e il gas sono le principali fonti di emissioni di CO2, con il carbone responsabile del 36% delle emissioni globali nel 2019. La combustione di carbone è anche la principale causa dell'aumento di 1°C delle temperature medie globali. L'abbattimento delle foreste, che riduce la capacità degli alberi di assorbire CO2, e l'allevamento intensivo, contribuiscono ulteriormente al riscaldamento climatico.
             </p>
         </section>
+
+        <!-- Pagina 5: Modulo di Contatto e Tabella -->
+        <section class="page" id="page5">
+            <h2>Contattaci</h2>
+            <form id="contactForm" method="post">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Messaggio:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+                <input type="submit" value="Invia">
+            </form>
+
+            <!-- Tabella per visualizzare il parere -->
+            <h3>Parere dell'utente</h3>
+            <table id="commentsTable" border="1">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Messaggio</th>
+                        <th>Commento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- I dati saranno inseriti qui -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p> Il Cambiamento Climatico </p>
+    </footer>
+
+    <script>
+        // Funzione per cambiare le pagine
+        function changePage(pageNumber) {
+            let pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            let selectedPage = document.getElementById('page' + pageNumber);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+
+            let links = document.querySelectorAll('nav ul li a');
+            links.forEach(link => link.classList.remove('active'));
+            links[pageNumber - 1].classList.add('active');
+        }
+
+        // Inizializzazione della pagina
+        document.addEventListener('DOMContentLoaded', function() {
+            changePage(1);
+            loadComments(); // Carica i commenti salvati
+        });
+
+        // Carica i commenti dal localStorage
+        function loadComments() {
+            const comments = JSON.parse(localStorage.getItem('comments')) || [];
+            const table = document.getElementById('commentsTable').getElementsByTagName('tbody')[0];
+            comments.forEach(comment => {
+                var newRow = table.insertRow();
+                newRow.insertCell(0).textContent = comment.name;
+                newRow.insertCell(1).textContent = comment.email;
+                newRow.insertCell(2).textContent = comment.message;
+                newRow.insertCell(3).textContent = "Grezie del tuo contributo";
+            });
+        }
+
+        // Gestione del modulo di contatto
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenire l'invio del modulo
+
+            // Recupero i valori dal modulo
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            // Aggiungo un commento personalizzato
+            var comment = {
+                name: name,
+                email: email,
+                message: message
+            };
+
+            // Salvo i commenti nel localStorage
+            const comments = JSON.parse(localStorage.getItem('comments')) || [];
+            comments.push(comment);
+            localStorage.setItem('comments', JSON.stringify(comments));
+
+            // Inserisco i dati nella tabella
+            var table = document.getElementById('commentsTable').getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow();
+            newRow.insertCell(0).textContent = name;
+            newRow.insertCell(1).textContent = email;
+            newRow.insertCell(2).textContent = message;
+            newRow.insertCell(3).textContent = "Grezie del tuo contributo";
+
+            // Mostro un messaggio di conferma
+            alert('Grazie, ' + name + '! Il tuo messaggio è stato inviato con successo.');
+
+            // Resetta il modulo
+            document.getElementById('contactForm').reset(); // Questo cancellerà i dati nel modulo
+        });
+    </script>
+
 </body>
 </html>
