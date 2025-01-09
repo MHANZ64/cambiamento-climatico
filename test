@@ -1,0 +1,23 @@
+
+Funzionalità
+
+   - Test d'avvio del Sito: Ok
+
+   - Login e registrazione: Testare il corretto funzionamento del modulo di registrazione, con validazione dei campi (email, password). Ok
+   
+   - Salvataggio Dati: Testare il salvataggio dei dati inviati e contrllare se vengono riportati nella tabella Ok
+   
+
+Interfaccia Utente
+
+   - Pulsanti e Navigazione: Testare la facilità di clic dei pulsanti e la fluidità della navigazione tra le pagine. Ok
+   
+
+Internazionalizzazione con l'utente
+
+   - Pulsanti: una volta premuti consentono il mobimento all'interno della pagina Ok
+
+Design
+
+   - Tema Scuro: Testare il funzionamento del tema scuro e la leggibilità in entrambi i temi. non siamo riusciti ad'implementarlo 
+
