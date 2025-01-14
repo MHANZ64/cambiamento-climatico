@@ -18,6 +18,8 @@
             <li><a href="#" onclick="changePage(2)">Impatto</a></li>
             <li><a href="#" onclick="changePage(3)">Cause</a></li>
             <li><a href="#" onclick="changePage(4)">Soluzioni</a></li>
+            <li><a href="#" onclick="changePage(5)">idee altrui</a></li>
+            <li><a href="#" onclick="changePage(6)">Messaggi degli utenti</a></li>
         </ul>
     </nav>
 
@@ -35,7 +37,8 @@
                 <p>
                     Tuttavia, l'intensificazione dell'effetto serra causata dalle attività umane, come l'uso eccessivo di combustibili fossili e la deforestazione, sta aumentando le temperature globali, con conseguenze gravi per il nostro ambiente e il clima.
                 </p>
-            <img src="https://quifinanza.it/wp-content/uploads/sites/5/2021/05/cambiamenti-climatici.jpg" alt="Cambiamento Climatico">
+                <img src="https://quifinanza.it/wp-content/uploads/sites/5/2021/05/cambiamenti-climatici.jpg" alt="Cambiamento Climatico">
+            </div>
         </section>
 
         <!-- Pagina 2 -->
@@ -49,7 +52,7 @@
             </p>
         </section>
 
-        <!-- Pagina 3: Cause -->
+        <!-- Pagina 3 -->
         <section class="page" id="page3">
             <h2>Quali sono le cause principali?</h2>
             <ul>
@@ -58,134 +61,225 @@
                 <li>Uso intensivo di risorse naturali</li>
                 <li>L'inquinamento plastico e i rifiuti</li>
             </ul>
-
-            <h3>Perché siamo preoccupati?</h3>
             <p>
             I cambiamenti climatici sono un fenomeno naturale, ma il riscaldamento globale attuale è anomalo, causato principalmente dalle attività umane. Con la rivoluzione industriale, le emissioni di CO2 e altri gas serra sono raddoppiate, portando la concentrazione di CO2 a livelli mai visti negli ultimi 700.000 anni.
-            </p>
-
-            <p>
-            Questo surriscaldamento del pianeta è stato confermato da numerosi studi scientifici, tra cui quelli dell'IPCC e osservazioni come quelle del Mauna Loa. Il legame tra CO2 e temperatura fu già stabilito nel XIX secolo e confermato negli anni '60 dagli scienziati David Keeling e Svante Arrhenius.
             </p>
         </section>
 
         <!-- Pagina 4 -->
         <section class="page" id="page4">
             <h2>Come possiamo ostacolare il cambiamento climatico?</h2>
-            <p>
-            Le attività umane, come la combustione di combustibili fossili e l'abbattimento delle foreste pluviali, stanno aumentando i gas serra nell'atmosfera, intensificando l'effetto serra e il riscaldamento globale. Il carbone, il petrolio e il gas sono le principali fonti di emissioni di CO2, con il carbone responsabile del 36% delle emissioni globali nel 2019. La combustione di carbone è anche la principale causa dell'aumento di 1°C delle temperature medie globali. L'abbattimento delle foreste, che riduce la capacità degli alberi di assorbire CO2, e l'allevamento intensivo, contribuiscono ulteriormente al riscaldamento climatico.
-            </p>
+            
+            
+            <h3>Per ostacolarlo bisogna adottare strategie.<h3>
+            
+            
+            
+            <p>(1) Diminure l'uso dei combustibili fossili.</p>
+            
+
+
+            <p>(2) Bisogna migliorare l'efficenza energetica degli edifici ed elettro domestici.</p>
+
+
+
+            <p>(3) Riforestare il pianeta piantando alberi.</p>
+
+
+
+            <p>(4) Utilizzare fertilizzanti biologici.</p>
+
+
+
+            <p>(5) Promuovere il riciclaggio.</p>
+
+
+
+            <p>(6) E Insegnare pratiche sostenibili nelle scuole e nelle comunità</p>
         </section>
 
-        <!-- Pagina 5: Modulo di Contatto e Tabella -->
-        <section class="page" id="page5">
-            <h2>Contattaci</h2>
-            <form id="contactForm" method="post">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required><br><br>
+        
+        <!-- Pagina 5 -->
+<section class="page" id="page5">
+    <h2>Contattaci</h2>
+    <form id="contactForm" method="post">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required><br><br>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
 
-                <label for="message">Messaggio:</label><br>
-                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+        <label for="message">Messaggio:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
 
-                <input type="submit" value="Invia">
-            </form>
+        <input type="submit" value="Invia">
+    </form>
 
-            <!-- Tabella per visualizzare il parere -->
-            <h3>Parere dell'utente</h3>
-            <table id="commentsTable" border="1">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Messaggio</th>
-                        <th>Commento</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- I dati saranno inseriti qui -->
-                </tbody>
-            </table>
-        </section>
-    </main>
+    <h3>Parere dell'utente</h3>
+    <!-- Tabella per visualizzare i commenti -->
+    <table id="commentsTable" border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Messaggio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- I commenti saranno inseriti dinamicamente qui -->
+        </tbody>
+    </table>
+</section>
+<!-- Pagina dei messaggi (esempio per pagina 6) -->
+<section id="page6" class="page">
+    <h2>Messaggi degli utenti</h2>
+    <table id="allCommentsTable" border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Messaggio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- I messaggi saranno caricati dinamicamente -->
+        </tbody>
+    </table>
+</section>
 
-    <footer>
-        <p> Il Cambiamento Climatico </p>
-    </footer>
 
     <script>
         // Funzione per cambiare le pagine
         function changePage(pageNumber) {
-            let pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-
-            let selectedPage = document.getElementById('page' + pageNumber);
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));  // Rimuovi 'active' da tutte le pagine
+        
+            const selectedPage = document.getElementById('page' + pageNumber);
             if (selectedPage) {
-                selectedPage.classList.add('active');
+                selectedPage.classList.add('active');  // Aggiungi 'active' alla pagina selezionata
             }
-
-            let links = document.querySelectorAll('nav ul li a');
-            links.forEach(link => link.classList.remove('active'));
-            links[pageNumber - 1].classList.add('active');
+        
+            const links = document.querySelectorAll('nav ul li a');
+            links.forEach(link => link.classList.remove('active'));  // Rimuovi 'active' dai link
+            links[pageNumber - 1].classList.add('active');  // Aggiungi 'active' al link selezionato
         }
-
+        
         // Inizializzazione della pagina
         document.addEventListener('DOMContentLoaded', function() {
-            changePage(1);
-            loadComments(); // Carica i commenti salvati
+            changePage(1);  // Mostra la prima pagina
+            loadComments();  // Carica i commenti salvati
         });
-
+        
         // Carica i commenti dal localStorage
         function loadComments() {
             const comments = JSON.parse(localStorage.getItem('comments')) || [];
             const table = document.getElementById('commentsTable').getElementsByTagName('tbody')[0];
             comments.forEach(comment => {
-                var newRow = table.insertRow();
+                const newRow = table.insertRow();
                 newRow.insertCell(0).textContent = comment.name;
                 newRow.insertCell(1).textContent = comment.email;
                 newRow.insertCell(2).textContent = comment.message;
-                newRow.insertCell(3).textContent = "Grezie del tuo contributo";
+                newRow.insertCell(3).textContent = "Grazie del tuo contributo";  // Corretto "Grezie" in "Grazie"
             });
         }
-
+        
         // Gestione del modulo di contatto
         document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevenire l'invio del modulo
+    event.preventDefault();  // Evita il ricaricamento della pagina
 
-            // Recupero i valori dal modulo
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var message = document.getElementById('message').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
 
-            // Aggiungo un commento personalizzato
-            var comment = {
-                name: name,
-                email: email,
-                message: message
-            };
+    if (!name || !email || !message) {
+        alert('Per favore, compila tutti i campi.');
+        return;
+    }
 
-            // Salvo i commenti nel localStorage
-            const comments = JSON.parse(localStorage.getItem('comments')) || [];
-            comments.push(comment);
-            localStorage.setItem('comments', JSON.stringify(comments));
+    const comment = {
+        name: name,
+        email: email,
+        message: message
+    };
 
-            // Inserisco i dati nella tabella
-            var table = document.getElementById('commentsTable').getElementsByTagName('tbody')[0];
-            var newRow = table.insertRow();
-            newRow.insertCell(0).textContent = name;
-            newRow.insertCell(1).textContent = email;
-            newRow.insertCell(2).textContent = message;
-            newRow.insertCell(3).textContent = "Grezie del tuo contributo";
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+    comments.push(comment);
+    localStorage.setItem('comments', JSON.stringify(comments));
 
-            // Mostro un messaggio di conferma
-            alert('Grazie, ' + name + '! Il tuo messaggio è stato inviato con successo.');
+    const table = document.getElementById('commentsTable').getElementsByTagName('tbody')[0];
+    const newRow = table.insertRow();
+    newRow.insertCell(0).textContent = name;
+    newRow.insertCell(1).textContent = email;
+    newRow.insertCell(2).textContent = message;
 
-            // Resetta il modulo
-            document.getElementById('contactForm').reset(); // Questo cancellerà i dati nel modulo
-        });
-    </script>
+    alert('Grazie, ' + name + '! Il tuo messaggio è stato inviato con successo.');
+    document.getElementById('contactForm').reset();
+});
+        
+        const express = require('express');
+    const app = express();
+    const cors = require('cors');
 
-</body>
-</html>
+    app.use(cors());  // Abilita richieste da domini differenti
+    app.use(express.json());  // Permette di ricevere dati JSON
+
+    // Simulazione di un database di commenti
+    let comments = [
+    { name: "Mario", email: "mario@example.com", message: "Il cambiamento climatico è importante!" },
+    { name: "Luisa", email: "luisa@example.com", message: "Bisogna agire insieme!" }
+    ];
+
+    // Endpoint per ottenere i commenti
+    app.get('/api/comments', (req, res) => {
+    res.json(comments);  // Restituisce i dati come JSON
+    });
+
+    // Avvio del server
+    const port = 3000;
+    app.listen(port, () => {
+    console.log(`Server in esecuzione su http://localhost:${port}`);
+    });
+    // Funzione per caricare i messaggi dal server
+    function loadComments() {
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+    const table = document.getElementById('commentsTable').getElementsByTagName('tbody')[0];
+    table.innerHTML = '';  // Pulisce il contenuto precedente della tabella
+
+    comments.forEach(comment => {
+        const newRow = table.insertRow();
+        newRow.insertCell(0).textContent = comment.name;   // Nome
+        newRow.insertCell(1).textContent = comment.email;  // Email
+        newRow.insertCell(2).textContent = comment.message;  // Messaggio
+    });
+}
+        
+        
+comments.forEach(comment => {
+    const newRow = tableBody.insertRow();
+    newRow.insertCell(0).textContent = comment.name;
+    newRow.insertCell(1).textContent = comment.email;
+
+    const messageCell = newRow.insertCell(2);
+    const messageButton = document.createElement('button');
+    messageButton.textContent = "Leggi Messaggio";
+    messageButton.onclick = () => {
+        alert(comment.message);  // Mostra il messaggio completo in un popup
+    };
+    messageCell.appendChild(messageButton);
+});
+
+
+        
+
+// Carica i commenti dal server quando si apre la pagina 6
+document.addEventListener('DOMContentLoaded', function() {
+    loadComments();  // Carica i commenti dal localStorage quando la pagina viene caricata
+});
+console.log('Commenti salvati nel localStorage:', comments);  // Mostra i commenti salvati
+console.log('Nome:', name, 'Email:', email, 'Messaggio:', message);  // Mostra i dati inseriti
+
+
+
+
+        
+        </script>

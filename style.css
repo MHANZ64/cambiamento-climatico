@@ -138,3 +138,18 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+
+#allCommentsTable {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    #allCommentsTable th, #allCommentsTable td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+    #allCommentsTable td.message-cell {
+        white-space: pre-wrap; /* Mantiene gli a capo nei messaggi */
+        word-wrap: break-word; /* Interrompe le parole lunghe */
+    }
