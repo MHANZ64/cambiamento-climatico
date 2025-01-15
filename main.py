@@ -3,7 +3,7 @@ from flask import Flask, request, render_template, redirect, url_for
 app = Flask(__name__)
 
 # Definisci il file per memorizzare le idee
-ideas_file = 'ideas.txt'  # Cambia questo percorso se necessario
+ideas_file = 'memoria.txt'  
 comments = []  # Inizializza anche la lista dei commenti
 
 @app.route('/', methods=['GET', 'POST'])

@@ -19,7 +19,7 @@
             <li><a href="#" onclick="changePage(3)">Cause</a></li>
             <li><a href="#" onclick="changePage(4)">Soluzioni</a></li>
             <li><a href="#" onclick="changePage(5)">idee altrui</a></li>
-            <li><a href="#" onclick="changePage(6)">Messaggi degli utenti</a></li>
+           
         </ul>
     </nav>
 
@@ -27,6 +27,7 @@
         <!-- Pagina 1 -->
         <section id="page1" class="page active">
             <h2>Che cos'è l'effetto serra naturale?</h2>
+            
             <div class="text-container">
                 <p>
                     La vita sulla Terra dipende da tre fattori: la giusta distanza dal Sole, l’atmosfera e il ciclo dell’acqua. L’effetto serra naturale, causato da gas come l’anidride carbonica (CO2), il metano (CH4) e il vapore acqueo (H2O), è fondamentale per mantenere il nostro clima stabile. Questi gas trattengono parte del calore solare che altrimenti verrebbe disperso nello spazio, riscaldando la superficie terrestre.
@@ -103,6 +104,7 @@
 <section class="page" id="page5">
     <h2>Contattaci</h2>
     <form id="contactForm" method="post">
+        <!-- il label crea un campo di input input va a dire cosa scrivere-->>
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" required><br><br>
 
@@ -130,150 +132,132 @@
         </tbody>
     </table>
 </section>
-<!-- Pagina dei messaggi (esempio per pagina 6) -->
-<section id="page6" class="page">
-    <h2>Messaggi degli utenti</h2>
-    <table id="allCommentsTable" border="1">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Messaggio</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- I messaggi saranno caricati dinamicamente -->
-        </tbody>
-    </table>
-</section>
-
-
-    <script>
-        // Funzione per cambiare le pagine
-        function changePage(pageNumber) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));  // Rimuovi 'active' da tutte le pagine
-        
-            const selectedPage = document.getElementById('page' + pageNumber);
-            if (selectedPage) {
-                selectedPage.classList.add('active');  // Aggiungi 'active' alla pagina selezionata
-            }
-        
-            const links = document.querySelectorAll('nav ul li a');
-            links.forEach(link => link.classList.remove('active'));  // Rimuovi 'active' dai link
-            links[pageNumber - 1].classList.add('active');  // Aggiungi 'active' al link selezionato
+<script>
+    // Funzione per cambiare le pagine
+    function changePage(pageNumber) {
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => page.classList.remove('active'));  // Rimuovi 'active' da tutte le pagine
+    
+        const selectedPage = document.getElementById('page' + pageNumber);
+        if (selectedPage) {
+            selectedPage.classList.add('active');  // Aggiungi 'active' alla pagina selezionata
         }
-        
-        // Inizializzazione della pagina
-        document.addEventListener('DOMContentLoaded', function() {
-            changePage(1);  // Mostra la prima pagina
-            loadComments();  // Carica i commenti salvati
-        });
-        
-        // Carica i commenti dal localStorage
-        function loadComments() {
-            const comments = JSON.parse(localStorage.getItem('comments')) || [];
-            const table = document.getElementById('commentsTable').getElementsByTagName('tbody')[0];
-            comments.forEach(comment => {
-                const newRow = table.insertRow();
-                newRow.insertCell(0).textContent = comment.name;
-                newRow.insertCell(1).textContent = comment.email;
-                newRow.insertCell(2).textContent = comment.message;
-                newRow.insertCell(3).textContent = "Grazie del tuo contributo";  // Corretto "Grezie" in "Grazie"
-            });
-        }
-        
-        // Gestione del modulo di contatto
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();  // Evita il ricaricamento della pagina
-
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    if (!name || !email || !message) {
-        alert('Per favore, compila tutti i campi.');
-        return;
+    
+        const links = document.querySelectorAll('nav ul li a');
+        links.forEach(link => link.classList.remove('active'));  // Rimuovi 'active' dai link
+        links[pageNumber - 1].classList.add('active');  // Aggiungi 'active' al link selezionato
     }
-
-    const comment = {
-        name: name,
-        email: email,
-        message: message
-    };
-
-    const comments = JSON.parse(localStorage.getItem('comments')) || [];
-    comments.push(comment);
-    localStorage.setItem('comments', JSON.stringify(comments));
-
-    const table = document.getElementById('commentsTable').getElementsByTagName('tbody')[0];
-    const newRow = table.insertRow();
-    newRow.insertCell(0).textContent = name;
-    newRow.insertCell(1).textContent = email;
-    newRow.insertCell(2).textContent = message;
-
-    alert('Grazie, ' + name + '! Il tuo messaggio è stato inviato con successo.');
-    document.getElementById('contactForm').reset();
-});
-        
-        const express = require('express');
-    const app = express();
-    const cors = require('cors');
-
-    app.use(cors());  // Abilita richieste da domini differenti
-    app.use(express.json());  // Permette di ricevere dati JSON
-
-    // Simulazione di un database di commenti
-    let comments = [
-    { name: "Mario", email: "mario@example.com", message: "Il cambiamento climatico è importante!" },
-    { name: "Luisa", email: "luisa@example.com", message: "Bisogna agire insieme per salvare il pianeta!" }
-    ];
-
-    // Endpoint per ottenere i commenti
-    app.get('/api/comments', (req, res) => {
-    res.json(comments);  // Restituisce i dati come JSON
+    
+    // Inizializzazione della pagina
+    document.addEventListener('DOMContentLoaded', function() {
+        changePage(1);  // Mostra la prima pagina
+        loadComments();  // Carica i commenti salvati
     });
-
-    // Avvio del server
-    const port = 3000;
-    app.listen(port, () => {
-    console.log(`Server in esecuzione su http://localhost:${port}`);
-    });
-    // Funzione per caricare i messaggi dal server
+    
+    // Carica i commenti dal localStorage
     function loadComments() {
-    const comments = JSON.parse(localStorage.getItem('comments')) || [];
-    const table = document.getElementById('commentsTable').getElementsByTagName('tbody')[0];
-    table.innerHTML = '';  // Pulisce il contenuto precedente della tabella
+        const comments = JSON.parse(localStorage.getItem('comments')) || [];
+        const table = document.getElementById('commentsTable').getElementsByTagName('tbody')[0];
+        comments.forEach(comment => {
+            const newRow = table.insertRow();
+            newRow.insertCell(0).textContent = comment.name;
+            newRow.insertCell(1).textContent = comment.email;
+            newRow.insertCell(2).textContent = comment.message;
+            newRow.insertCell(3).textContent = "Grazie del tuo contributo";  // Corretto "Grezie" in "Grazie"
+        });
+    }
+    
+    // Gestione del modulo di contatto
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+event.preventDefault();  // Evita il ricaricamento della pagina
 
-    comments.forEach(comment => {
-        const newRow = table.insertRow();
-        newRow.insertCell(0).textContent = comment.name;   // Nome
-        newRow.insertCell(1).textContent = comment.email;  // Email
-        newRow.insertCell(2).textContent = comment.message;  // Messaggio
-    });
+const name = document.getElementById('name').value.trim();
+const email = document.getElementById('email').value.trim();
+const message = document.getElementById('message').value.trim();
+
+if (!name || !email || !message) {
+    alert('Per favore, compila tutti i campi.');
+    return;
 }
-        
-        
-comments.forEach(comment => {
-    const newRow = tableBody.insertRow();
-    newRow.insertCell(0).textContent = comment.name;
-    newRow.insertCell(1).textContent = comment.email;
 
-    const messageCell = newRow.insertCell(2);
-    const messageButton = document.createElement('button');
-    messageButton.textContent = "Leggi Messaggio";
-    messageButton.onclick = () => {
-        alert(comment.message);  // Mostra il messaggio completo in un popup
-    };
-    messageCell.appendChild(messageButton);
+const comment = {
+    name: name,
+    email: email,
+    message: message
+};
+
+const comments = JSON.parse(localStorage.getItem('comments')) || [];
+comments.push(comment);
+localStorage.setItem('comments', JSON.stringify(comments));
+
+const table = document.getElementById('commentsTable').getElementsByTagName('tbody')[0];
+const newRow = table.insertRow();
+newRow.insertCell(0).textContent = name;
+newRow.insertCell(1).textContent = email;
+newRow.insertCell(2).textContent = message;
+
+alert('Grazie, ' + name + '! Il tuo messaggio è stato inviato con successo.');
+document.getElementById('contactForm').reset();
+});
+    
+    const express = require('express');
+const app = express();
+const cors = require('cors');
+
+app.use(cors());  // Abilita richieste da domini differenti
+app.use(express.json());  // Permette di ricevere dati JSON
+
+// Simulazione di un database di commenti
+let comments = [
+{ name: "Mario", email: "mario@example.com", message: "Il cambiamento climatico è importante!" },
+{ name: "Luisa", email: "luisa@example.com", message: "Bisogna agire insieme per salvare il pianeta!" }
+];
+
+// Endpoint per ottenere i commenti
+app.get('/api/comments', (req, res) => {
+res.json(comments);  // Restituisce i dati come JSON
+});
+
+// Avvio del server
+const port = 3000;
+app.listen(port, () => {
+console.log(`Server in esecuzione su http://localhost:${port}`);
+});
+// Funzione per caricare i messaggi dal server
+function loadComments() {
+const comments = JSON.parse(localStorage.getItem('comments')) || [];
+const table = document.getElementById('commentsTable').getElementsByTagName('tbody')[0];
+table.innerHTML = '';  // Pulisce il contenuto precedente della tabella
+
+comments.forEach(comment => {
+    const newRow = table.insertRow();
+    newRow.insertCell(0).textContent = comment.name;   // Nome
+    newRow.insertCell(1).textContent = comment.email;  // Email
+    newRow.insertCell(2).textContent = comment.message;  // Messaggio
+});
+}
+    
+    
+comments.forEach(comment => {
+const newRow = tableBody.insertRow();
+newRow.insertCell(0).textContent = comment.name;
+newRow.insertCell(1).textContent = comment.email;
+
+const messageCell = newRow.insertCell(2);
+const messageButton = document.createElement('button');
+messageButton.textContent = "Leggi Messaggio";
+messageButton.onclick = () => {
+    alert(comment.message);  // Mostra il messaggio completo in un popup
+};
+messageCell.appendChild(messageButton);
 });
 
 
-        
+    
 
 // Carica i commenti dal server quando si apre la pagina 6
 document.addEventListener('DOMContentLoaded', function() {
-    loadComments();  // Carica i commenti dal localStorage quando la pagina viene caricata
+loadComments();  // Carica i commenti dal localStorage quando la pagina viene caricata
 });
 console.log('Commenti salvati nel localStorage:', comments);  // Mostra i commenti salvati
 console.log('Nome:', name, 'Email:', email, 'Messaggio:', message);  // Mostra i dati inseriti
@@ -281,5 +265,7 @@ console.log('Nome:', name, 'Email:', email, 'Messaggio:', message);  // Mostra i
 
 
 
-        
-        </script>
+    
+    </script>
+
+    
