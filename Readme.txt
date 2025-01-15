@@ -9,13 +9,9 @@ Introduzione: Una panoramica generale sul cambiamento climatico.
 Impatto: Dettagli sugli effetti globali del riscaldamento globale.
 Cause: Le principali cause del cambiamento climatico.
 Soluzioni: Proposte e azioni per ridurre gli effetti del cambiamento climatico.
+idee altrui: inserisci nome email e il messaggio su come risolveresti il cambiamento climatico
 
-Come Usare
-Clona questo repository o scarica i file.
-Apri index.html nel tuo browser per visualizzare il sito premi il tasto Go live in basso a destra e il sito si avviera e potrai
-trarre beneficio di tutto il sapere che puoi avere sull'Cambiamento climatico
-
-Librerie Utilizate Sono:
+Librerie che sarebbero servite per i vari progetti:
 
 Package                      Version
 aiohappyeyeballs             2.4.3
