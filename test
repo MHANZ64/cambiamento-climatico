@@ -5,7 +5,7 @@ Funzionalità
 
    - Login e registrazione: Testare il corretto funzionamento del modulo di registrazione, con validazione dei campi (email, password). Ok
    
-   - Salvataggio Dati: Testare il salvataggio dei dati inviati e contrllare se vengono riportati nella tabella Ok
+   - Salvataggio Dati: Testare il salvataggio dei dati inviati e controllare se vengono riportati nella tabella Ok
    
 
 Interfaccia Utente
@@ -15,7 +15,7 @@ Interfaccia Utente
 
 Internazionalizzazione con l'utente
 
-   - Pulsanti: una volta premuti consentono il momovimento all'interno della pagina. non ancora implementato
+   - Pulsanti: una volta premuti consentono il momovimento all'interno della pagina. non ancora implementato ok
 
 Design
 
